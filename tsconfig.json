@@ -1,0 +1,14 @@
+{
+  "exclude": [
+    "static",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "target": "es5",
+    "allowJs": true,
+    "sourceMap": true
+  }
+}
