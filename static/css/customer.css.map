@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/styles/customer.scss"],"names":[],"mappings":"AAAA;EACI,UAAU;EACV,SAAS","file":"css/customer.css","sourcesContent":["body, html {\n    padding: 0;\n    margin: 0;\n}"],"sourceRoot":""}

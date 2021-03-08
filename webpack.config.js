@@ -10,7 +10,6 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const RemovePlugin = require('remove-files-webpack-plugin');
 const ImageminPlugin = require("imagemin-webpack");
 
-const vendor_import = require(path.resolve(__dirname, 'src/vendor.json'));
 const fontawesome = require(path.resolve(__dirname, 'src/fontawesome.json'));
 
 try {
@@ -32,8 +31,7 @@ if (fontawesome.usage === 'free') {
 }
 
 const vendor = [
-  ...fontawesome[fontawesome.usage].styles,
-  ...vendor_import.styles
+  ...fontawesome[fontawesome.usage].styles
 ]
 
 const config = {
@@ -44,16 +42,9 @@ const config = {
   },
 
   entry: {
-    cloudsuite: [
-      './src/scripts/cloudsuite.js',
-      './src/styles/cloudsuite.scss'
-    ],
-    styleguide: [
-      './src/scripts/styleguide.js',
-      './src/styles/styleguide.scss'
-    ],
-    fonts: [
-      './src/styles/fonts.scss'
+    customer: [
+      './src/scripts/customer.js',
+      './src/styles/customer.scss'
     ],
     vendor
   },
@@ -76,14 +67,13 @@ const config = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new WebpackConcatPlugin({
-      bundles: [
-        {
-          destination: 'static/js/vendor.js',
-          source: vendor_import.scripts,
-        },
-      ],
-    }),
+    // new WebpackConcatPlugin({
+    //   bundles: [
+    //     {
+    //       destination: 'static/js/vendor.js'
+    //     },
+    //   ],
+    // }),
     new CleanWebpackPlugin({
       dry: false,
       cleanOnceBeforeBuildPatterns: [
@@ -237,15 +227,13 @@ const config = {
       minSize: 30000,
       name: true
     }
-  }
+  },
+  devServer: {
+    publicPath: '/static/',
+    contentBase: './templates/',
+    watchContentBase: true,
+  },
+  devtool: 'source-map'
 }
 
-module.exports = (env, argv) => {
-  if (argv.mode === 'development') {
-    config.stats = 'minimal';
-  }
-
-  config.devtool = 'source-map';
-
-  return config;
-};
+module.exports = (env, argv) => config;
