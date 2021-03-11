@@ -43,8 +43,12 @@ const config = {
 
   entry: {
     customer: [
-      './src/scripts/customer.js',
+      './src/scripts/customer.js',      
+      './src/scripts/items.js',
+      './src/styles/text.scss',
+      './src/styles/vars.scss',
       './src/styles/customer.scss'
+
     ],
     vendor
   },

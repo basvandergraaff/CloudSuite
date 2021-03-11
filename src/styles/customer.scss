@@ -1,28 +1,44 @@
 @import "vars";
 
-body, html {
+body, html, span {
   padding: 0;
   margin: 0;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+
+}
+.parent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 100;
 }
 
 .main-body {
   padding-top: $menu-size;
   color: $text-color;
   background-color: $main-bgcolor;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Roboto';
 }
 
 .main-menu {
-  position: fixed;
   border: 0px;
   z-index: 999;
-  right: 0px;
-  left: 0px;
-  height: $menu-size;
-
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-around;
-  margin: auto;
+  justify-content: center;
 
   border-bottom: 1px solid;
   color: $text-color;
@@ -30,26 +46,46 @@ body, html {
   border-color: $divider-color;
 }
 
+.sub-menu{
+  position: fixed;
+  border: 0px;
+  z-index: 999;
+  top: $menu-size;
+  height: 100px;
+  visibility: hidden;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  
+  margin-top: $menu-size;
+
+  border: 1px solid;
+  color: $text-color;
+  background-color: $main-bgcolor;
+  border-color: $divider-color;
+}
+
 .mainmenu-item {
   background: $main-bgcolor;
-  text-align: center;
-  margin: auto;
-  color: $test-color;
-  background-color: $test-color2;
+  padding: 1em;  
+  background-color: $test-color;
+  height:100%;
+}
+
+.spacer {
 }
 
 .muted {
   position: fixed;
   visibility: hidden;
   z-index: 1;
-  opacity: 0.5;
+  opacity: 0.3;
   border: 0px;
   left: 0;
   right: 0;
   top: $menu-size;
   bottom: 0;
   background-color: $muted-color;
-}
-.sub-menu{
-  
 }
