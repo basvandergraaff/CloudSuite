@@ -1,91 +1,135 @@
 @import "vars";
 
-body, html, span {
-  padding: 0;
-  margin: 0;
+* {
+  box-sizing: border-box;
 }
 
-.wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-
-}
-.parent {
+.main-parent {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   margin: auto;
   width: 100%;
-  z-index: 100;
+  z-index: 10;
+  text-align: center;
+}
+
+.sub-parent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 20; 
+  text-align: center;
 }
 
 .main-body {
   padding-top: $menu-size;
   color: $text-color;
   background-color: $main-bgcolor;
-  max-width: 960px;
+  
   margin: 0 auto;
   font-family: 'Roboto';
 }
 
 .main-menu {
-  border: 0px;
   z-index: 999;
-  align-items: center;
-  text-align: center;
+  height: $menu-size;
   width: 100%;
   
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
-
+  align-items: center;
+  
   border-bottom: 1px solid;
-  color: $text-color;
   background-color: $main-bgcolor;
   border-color: $divider-color;
 }
+.mainmenu-item {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $main-bgcolor;
+  height:100%; 
+  align-self: center;
+  line-height: $menu-size;
+}
 
-.sub-menu{
-  position: fixed;
+.submenu{
   border: 0px;
-  z-index: 999;
+  z-index: 998;
   top: $menu-size;
-  height: 100px;
+  
   visibility: hidden;
 
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   flex-wrap: nowrap;
-  justify-content: center;
-  
-  margin-top: $menu-size;
+  justify-content: center;  
+  margin-top: 5px;
+  overflow: hidden;
+  text-align: left;
 
-  border: 1px solid;
   color: $text-color;
-  background-color: $main-bgcolor;
   border-color: $divider-color;
+  box-shadow: 0px 5px 5px $shadow-color;
 }
 
-.mainmenu-item {
-  background: $main-bgcolor;
-  padding: 1em;  
-  background-color: $test-color;
-  height:100%;
+.submenu-item {
+  background-color: $main-bgcolor;
+  align-self:stretch;
+}
+
+#menu-index {
+  visibility:hidden;
 }
 
 .spacer {
+  flex-grow: 1;
 }
 
-.muted {
+#greyed {
   position: fixed;
   visibility: hidden;
   z-index: 1;
-  opacity: 0.3;
+  opacity: $greyed-opacity;
   border: 0px;
   left: 0;
   right: 0;
   top: $menu-size;
   bottom: 0;
-  background-color: $muted-color;
+  background-color: $greyed-color;
 }
+
+.span {
+  height: $menu-size; 
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.searchinput {
+  background: $main-bgcolor;
+  border-radius: 2em;
+  outline: none;
+  min-width: 250px;
+  padding: 0.2em;
+  padding-left: 10px;
+  margin: 0.8em;
+  
+  line-height: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  #menu-index {
+    visibility: visible;
+  }
+  .input {
+    order: 2;
+  }
+
+
+}
+

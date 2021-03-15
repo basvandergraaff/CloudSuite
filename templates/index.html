@@ -6,17 +6,21 @@
     <title>Front-end Assessment - Header</title>
     <link rel="stylesheet" href="../static/css/customer.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+
+    <!--<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 0px) and (max-device-width: 600px)" href="css/mobile.css" />-->
+
 </head>
 <body>
     <script src="../static/js/customer.js"></script>
-    <div class="parent">
+    <div class="main-parent">
       <div class="main-menu">
         <div class="mainmenu-spacer"></div>
-        <div class="mainmenu-item">
+        <div id="menu-index" class="mainmenu-item menu-title"><span class="material-icons">menu</span></div>
+        <div class="mainmenu-item menu-title">
           <a href="javascript:window.location.reload(true)"><img src="../static/img/logo.png" alt="Logo Ipsum"></a>
         </div>
         <div class="mainmenu-item menu-title" id="menu">
-          Producten
+          Producten<span class="material-icons">keyboard_arrow_down</span>
         </div>
         <div class="mainmenu-item menu-title">
           Inspiratie
@@ -28,7 +32,13 @@
           Meer
         </div>
         <div class="mainmenu-item menu-title">
-          Search
+          
+          <div class="form-group fg--search">
+            <input type="text" class="menu-title searchinput" placeholder="Waar ben je naar op zoek?">
+
+            <!--<button type="submit"><i class="fa fa-search"></i></button>-->
+          </div>
+          
         </div>
         <div class="mainmenu-item menu-title">
           <span class="material-icons">perm_identity</span>Inloggen
@@ -38,18 +48,56 @@
         </div>
         <div class="mainmenu-spacer"></div>
       </div>
-    </div>
 
-    <div class="muted" id="muted">
-    </div>
-
-    <div class="parent">
-      <div class="sub-menu" id="sub-menu">
-        Submenu
+      <div class="submenu" id="submenu">
+        <div class="submenu-item">
+          <div class="menu-header">Computers & tablets</div>
+          <div class="menu-item">Laptops, desktops & monitoren</div>
+          <div class="menu-item">Zakelijk</div>
+          <div class="menu-item">Tablets & e-reader</div>
+          <div class="menu-item">Computeronderdelen</div>
+          <div class="menu-item">Printers & randapparatuur</div>
+          <div class="menu-item">Geheugen & opslag</div>
+          <div class="menu-item">Netwerk & internet</div>
+          <div class="menu-item">Gaming</div>
+        </div>
+        <div class="submenu-item">
+          <div class="menu-header">Beeld & Geluid</div>
+          <div class="menu-item">Televisie & beamers</div>
+          <div class="menu-item">Home cinema</div>
+          <div class="menu-item">Audio voor onderweg</div>
+          <div class="menu-item">Radio's & speakers</div>
+          <div class="menu-item">Studio gear</div>
+          <div class="menu-item">DJ gear</div>
+          <div class="menu-item">Muziekinstrumenten</div>
+        </div>
+        <div class="submenu-item">
+          <div class="menu-header">Sport & Verzorging</div>
+          <div class="menu-item">Sportelectronica</div>
+          <div class="menu-item">Fitness</div>
+          <div class="menu-item">Scheren</div>
+          <div class="menu-item">Mondverzorging</div>
+          <div class="menu-item">Gezondheid</div>
+          <div class="menu-item">Krachttraining</div>
+          <div class="menu-item">Ontharen</div>
+          <div class="menu-item">Haarstyling</div>
+          <div class="menu-item">Lichaamsmassage</div>
+        </div>
+        <div class="submenu-item">
+          <div class="menu-header">Tuin & klussen</div>
+          <div class="menu-item">Tuingereedschap</div>
+          <div class="menu-item">Electrisch gereedschap</div>
+          <div class="menu-item">Buiten koken</div>
+          <div class="menu-item">Tuininrichting</div>
+          <div class="menu-item">Lichtgereedschap</div>
+          <div class="menu-item">Klusbenodigdheden</div>
+          <div class="menu-item">Meer klussen</div>
+        </div>
       </div>
+    </div><!--parent-->
+
+    <div id="greyed">
     </div>
-
-
 
     <div class="main-body">
       <p>
