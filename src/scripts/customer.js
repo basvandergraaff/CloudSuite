@@ -14,7 +14,7 @@
       window.addEventListener('resize', function () { 
         //"use strict";
         //window.location.reload(); 
-        console.log('resize');
+        //console.log('resize');
         closeMenu();
       });
     }

@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.material-icons{
+  display: inline-flex;
+  vertical-align: middle;
+}
+
 .main-parent {
   position: fixed;
   top: 0;
@@ -50,12 +55,10 @@
   border-color: $divider-color;
 }
 .mainmenu-item {
-  display: block;
+  display: inline-block;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: $main-bgcolor;
-  height:100%; 
-  align-self: center;
+  background-color: $main-bgcolor;  
   line-height: $menu-size;
 }
 
@@ -128,6 +131,9 @@
   }
   .input {
     order: 2;
+  }
+  #inloggen-label{
+    visibility: hidden;
   }
 
 
